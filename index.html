@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Crossword Puzzle </title>
+    <style>
+        .dark {
+            background-color: rgb(108, 108, 195);
+        }
+
+        .red {
+            background-color: #FF5733;
+        }
+
+        .none {
+            background-color: transparent;
+        }
+
+        body {
+            margin: 0; /* Remove default body margin */
+            position: relative;
+        }
+        
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: url('./images/bg.png');
+            background-size: cover; 
+        }
+
+        body {
+            background-image: url('./images/bg.png');
+            background-size: auto;
+            background-repeat: repeat;
+            background-position: center center;
+            background-color: #f0f0f0;
+        }
+
+        .headings {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+        }
+
+        h2 {
+            font-size: 2em;
+        }
+
+        h4 {
+            font-size: 1em;
+        }
+
+        .main{
+            font-size: 1.5rem;
+            font-weight: bold;
+            color:black;
+            justify-content: center;
+            align-items: center;
+            width:500px;
+            max-width:80%;
+            top:5%;
+            margin:auto;
+        }
+
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    height: 100vh;
+}
+
+form {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 50%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px;
+    background-color: #656565;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #303030;
+    color:white;
+}
+
+#result {
+    margin-top: 20px;
+}
+
+form{
+    width:300px;
+    max-width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="headings">
+        <h1>English Literary Association</h1>
+        <h2>Crime Scene Chronicles</h2>
+        <h4>Find the fourth clue</h4>
+    </div>
+
+    <div class="main">
+        <div class="heading">
+            <h3> The cipher - 2</h3>
+        </div>
+        <div class="paragraph">
+            <div class="example">
+                <p class="content"> Sheena ----- >ukijth</p>
+                <p class="solve"> 
+                    friend ----- > ?
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <form id="answerForm">
+        <label for="answerInput">Enter the correct answer:</label>
+        <input type="text" id="answerInput" required>
+        <button type="button" onclick="checkAnswer()">Check</button>
+    </form>
+    
+    <div id="result"></div>
+    
+    <script>
+        function checkAnswer() {
+            var userInput = document.getElementById('answerInput').value.toLowerCase();
+            var correctAnswer = 'humjtk'; // Replace with your correct answer
+    
+            if (userInput === correctAnswer) {
+                document.getElementById('result').innerHTML = '<p>Correct! Your next clue Letter is <strong> O</strong>.</p>';
+            } else {
+                document.getElementById('result').innerHTML = '<p>Incorrect. Try again.</p>';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
